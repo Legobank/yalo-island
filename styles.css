@@ -39,22 +39,19 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-    url("assets/bg.jpg") center / cover no-repeat fixed;
-}
 
 body{
   margin:0;
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-    url("assets/bg.jpg") center / cover no-repeat fixed;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  color:var(--text);
+  color: var(--text);
+  overflow-x:hidden;
 
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url("assets/bg.jpg") center / cover no-repeat fixed;
 }
+
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
 
 /* BG FX */
 .bg{position:fixed; inset:0; z-index:-2; pointer-events:none}
@@ -76,20 +73,13 @@ body{
   mix-blend-mode: overlay;
 }
 
-.container{max-width:var(--max); margin:0 auto; padding:0 20px}
-
 /* NAV */
 .nav{
   position:sticky; top:0; z-index:1000;
-
   backdrop-filter: blur(16px) saturate(140%);
-
   -webkit-backdrop-filter: blur(16px) saturate(140%);
-
   background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.15));
-
   border-bottom: 1px solid var(--line);
-
 }
 [data-theme="light"] .nav{
   background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.5));
@@ -112,13 +102,14 @@ body{
 .brand__text span{font-size:12px; color:var(--muted)}
 
 .nav__links{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+
 .pill{
   display:inline-flex; align-items:center; gap:8px;
   padding:10px 12px;
   border-radius:999px;
   border:1px solid var(--line);
   background: rgba(255,255,255,.04);
-  color: #ffffff; 
+  color:#ffffff;
   text-decoration:none;
   font-weight:800;
   font-size:13px;
@@ -142,146 +133,26 @@ body{
   border-top:1px solid var(--line);
   gap:10px;
 }
-
-/* Force logo to be a perfect circle */
-.brand__logo{
-  width: 42px;          /* adjust if needed */
-  height: 42px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: transparent;
-  display: block;
-}
-
 .menu.open{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
 
-/* HERO */
-/* CTA with image previews */
-.cta--with-images{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-/* Buttons stay clean */
-.cta__buttons{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-/* Image preview row */
-.cta__images{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:12px;
-  height:100%;
-}
-
-/* Image card */
-.cta__img{
-  position:relative;
-  border-radius:16px;
-  overflow:hidden;
-  width: 100%;
-  height:70%;
-  border:1px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,.35);
-}
-
-/* Image itself */
-.cta__img img{
-  width:100%;
-  height:100%;
-  object-fit:fill;
+/* Circle logo (if you use <img class="brand__logo" ...>) */
+.brand__logo{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  background:transparent;
   display:block;
-  filter: brightness(.85);
-  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Hover effect */
-.cta__img:hover img{
-  transform: scale(1.05);
-  filter: brightness(1);
-}
-
-/* Overlay to keep text readable */
-.cta__img::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.05)
-  );
-}
-
-/* Responsive */
-@media (max-width: 640px){
-  .cta__images{
-    grid-template-columns: 1fr;
-  }
-  .cta__img{
-    height:160px;
-  }
-}
-/* ===== CENTER HERO CONTENT ===== */
-
-.hero{
-  display: grid;
-  grid-template-columns: 1fr;   /* single column */
-  justify-items: center;        /* center the card */
-}
-
-.hero__left{
-  text-align: center;           /* center text */
-  max-width: 760px;             /* nice centered width */
-  width: 100%;
-}
-
-/* Center the kicker pill */
-.hero__left .kicker{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Center the CTA buttons */
-.cta{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* Center the image previews */
-.cta__images{
-  margin: 16px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  max-width: 760px;
-}
-
-/* Center image cards */
-.cta__img{
-  margin: 0 auto;
-}
-
-/* Mobile */
-@media (max-width: 640px){
-  .cta__images{
-    grid-template-columns: 1fr;
-  }
-}
-
+/* HERO (Centered) */
 .hero{
   padding: 48px 0 24px;
   display:grid;
   grid-template-columns: 1fr;
   gap: 18px;
   align-items:center;
+  justify-items:center;
 }
 .hero__left, .hero__right{
   border:1px solid var(--line);
@@ -291,6 +162,11 @@ body{
   padding: 22px;
   position:relative;
   overflow:hidden;
+  width: 100%;
+}
+.hero__left{
+  max-width: 760px;
+  text-align:center;
 }
 .hero__left::before,
 .hero__right::before{
@@ -315,6 +191,8 @@ body{
   letter-spacing:.35px;
   text-transform:uppercase;
   width: fit-content;
+  margin-left:auto;
+  margin-right:auto;
 }
 .dot{
   width:9px; height:9px; border-radius:99px;
@@ -336,8 +214,53 @@ h1{
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.25));
 }
 .lead{margin:0 0 16px; color:var(--muted); line-height:1.65; max-width: 65ch}
-.cta{display:flex; gap:10px; flex-wrap:wrap}
-.micro{margin-top: 12px; display:flex; gap:10px; align-items:center; color:var(--muted); font-size:12.5px}
+
+/* CTA buttons */
+.cta{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* CTA preview images */
+.cta__images{
+  margin: 16px auto 0;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  max-width: 760px;
+}
+.cta__img{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  width: 90%;
+  height: 100%; /* consistent */
+  border:1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+.cta__img img{
+  width:100%;
+  height:100%;
+  object-fit: cover; /* IMPORTANT: no stretching */
+  display:block;
+  filter: brightness(.85);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.cta__img:hover img{
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+.cta__img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.05));
+}
+
+.micro{margin-top: 12px; display:flex; justify-content:center; gap:10px; align-items:center; color:var(--muted); font-size:12.5px}
 .spark{
   width:10px; height:10px; border-radius:4px;
   background:
@@ -492,7 +415,6 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospa
   height: 210px;
   object-fit: cover;
   display:block;
-  background says: none;
 }
 .shot__meta{padding: 12px}
 .shot__meta b{display:block; font-size: 13.5px; margin-bottom: 4px}
@@ -509,7 +431,6 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospa
   background: rgba(0,0,0,.30);
   backdrop-filter: blur(10px);
 }
-
 .shot.missing{
   background:
     radial-gradient(260px 180px at 20% 20%, rgba(255,255,255,.12), transparent 60%),
@@ -682,69 +603,39 @@ input:focus, select:focus, textarea:focus{
 .reveal{opacity:0; transform: translateY(10px); transition: opacity 520ms ease, transform 520ms ease}
 .reveal.in{opacity:1; transform: translateY(0)}
 
-/* Responsive */
+/* Responsive (base) */
 @media (max-width: 980px){
   .hero{grid-template-columns: 1fr}
   .service{grid-column: span 6}
   .shot{grid-column: span 6}
   .aboutGrid, .bookGrid{grid-template-columns: 1fr}
 }
+
+/* ===============================
+   MOBILE: keep same desktop vibe
+   =============================== */
 @media (max-width: 640px){
+
+  .container{ padding: 0 14px; }
+  .section{ padding: 18px 0; }
+
   .nav__links{display:none}
   .burger{display:inline-flex}
-  .menu.open{display:grid}
-  .service{grid-column: span 12}
-  .shot{grid-column: span 12}
-  .field.two{grid-template-columns: 1fr}
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  *{animation:none !important; transition:none !important}
-  html{scroll-behavior:auto}
-}
-/* =========================
-   MOBILE POLISH (DROP-IN)
-   Paste at bottom of styles.css
-   ========================= */
-
-@media (max-width: 640px){
-
-  /* Less side padding so cards feel wider */
-  .container{ padding: 0 14px; }
-
-  /* Nav: make mobile menu full width buttons */
-  .menu.open{
-    grid-template-columns: 1fr;   /* stack menu items */
-  }
+  .menu.open{display:grid; grid-template-columns: 1fr; gap:10px}
   .menu .pill{
-    justify-content: center;
-    padding: 12px 14px;
-    font-size: 14px;
+    width:100%;
+    justify-content:center;
+    padding:12px 14px;
+    font-size:14px;
   }
 
-  /* HERO: tighter spacing + centered */
-  .hero{
-    padding: 22px 0 12px;
-    gap: 12px;
-  }
-  .hero__left, .hero__right{
-    padding: 16px;
-    border-radius: 18px;
-  }
-  h1{
-    font-size: 34px;
-    line-height: 1.05;
-    margin: 10px 0 8px;
-  }
-  .lead{
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 12px;
-    max-width: none;
-  }
+  .hero{ padding: 22px 0 12px; gap: 12px; }
+  .hero__left, .hero__right{ padding: 16px; border-radius: 18px; }
+  .hero__left{ max-width: 100%; }
 
-  /* CTA buttons: full-width (looks premium + easy to tap) */
+  h1{ font-size: 34px; line-height: 1.05; margin: 10px 0 8px; }
+  .lead{ font-size: 14px; line-height: 1.6; max-width: none; margin-bottom: 12px; }
+
   .cta{
     flex-direction: column;
     align-items: stretch;
@@ -757,70 +648,28 @@ input:focus, select:focus, textarea:focus{
     font-size: 14px;
   }
 
-  /* CTA images: 1 column, taller, nicer */
   .cta__images{
     grid-template-columns: 1fr;
     gap: 10px;
+    max-width: 100%;
     margin-top: 12px;
   }
-  .cta__img{
-    height: 190px;
-    border-radius: 18px;
-  }
+  .cta__img{ height: 190px; border-radius: 18px; }
 
-  /* TOOLBAR: stack search + filters */
   .toolbar{
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
   }
-  .search{
-    width: 100%;
-    padding: 12px 14px;
-  }
-  .chips{
-    gap: 8px;
-  }
-  .chip{
-    padding: 10px 12px;
-    font-size: 13px;
-    width: fit-content;
-  }
+  .search{ width:100%; padding: 12px 14px; }
 
-  /* PORTFOLIO cards: better image height + spacing */
-  .shot{
-    border-radius: 18px;
-  }
-  .shot__img{
-    height: 240px;     /* taller = better on phones */
-  }
-  .shot__meta{
-    padding: 12px 12px 14px;
-  }
-  .shot__tag{
-    top: 10px; left: 10px;
-  }
+  .service{ grid-column: span 12; border-radius: 18px; padding: 14px; }
 
-  /* SERVICES: make cards feel less crowded */
-  .service{
-    padding: 14px;
-    border-radius: 18px;
-  }
-  .serviceTop{
-    align-items: center;
-  }
-  .service ul{
-    font-size: 13px;
-  }
+  .shot{ grid-column: span 12; border-radius: 18px; }
+  .shot__img{ height: 260px; }
 
-  /* About/Book: tighter */
-  .card{
-    padding: 14px;
-    border-radius: 18px;
-  }
-  .field.two{
-    grid-template-columns: 1fr; /* already, but force it */
-  }
+  .field.two{ grid-template-columns: 1fr; }
+
   .actions{
     flex-direction: column;
     align-items: stretch;
@@ -832,24 +681,20 @@ input:focus, select:focus, textarea:focus{
     font-size: 14px;
   }
 
-  /* Footer: stack nicely */
   .footer__in{
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
-  .footer__links{
-    width: 100%;
-  }
+  .footer__links{ width: 100%; }
   .footer__links .pill{
-    justify-content: center;
     width: 100%;
+    justify-content: center;
   }
 }
 
-/* Medium phones/tablets polish */
-@media (max-width: 980px){
-  .hero__left, .hero__right{
-    padding: 18px;
-  }
-  .cta__img{ height: 150px; }
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important}
+  html{scroll-behavior:auto}
 }
