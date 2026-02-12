@@ -675,38 +675,23 @@ input:focus, select:focus, textarea:focus{
   }
 
   /* SEARCH — remove bubble look */
-  .toolbar{
-    flex-direction: column;
-    gap: 10px;
-  }
 
-  .search{
-  flex: 1 1 260px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, var(--card2), var(--card));
-  border-radius: 18px; /* changed from 999px */
-  padding: 12px 16px;
-
-  box-shadow: var(--shadow2);
-  transition: border-color 260ms ease, transform 260ms ease;
+.toolbar{
+  flex-direction: column;
+  align-items: center;   /* center instead of stretch */
 }
 
-.search:hover{
-  border-color: rgba(255,255,255,.22);
-  transform: translateY(-1px);
+.search{
+  width: 100%;
+  max-width: 420px;      /* prevents giant full-width stretch */
+  padding: 10px 14px;    /* slightly tighter */
+  border-radius: 16px;
 }
 
 .search input{
-  width:100%;
-  border:0;
-  outline:0;
-  background: transparent;
-  color: var(--text);
-  font-size: 14px;
+  font-size: 13.5px;     /* slightly smaller text */
+}
+
 }
 
 
