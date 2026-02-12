@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yalo Island </title>
+  <meta name="description" content="Yalo Island: Henna & Tattoos, Hair Style, Makeup, Digital Art, Photoshoots." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Background FX (pure CSS + a little JS) -->
+  <div class="bg">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav__in">
+      <a class="brand" href="#top" aria-label="Yalo Island home">
+        <!-- Optional: put your logo at assets/logo.png and uncomment the img -->
+        <img class="brand__logo" src="assets/logo.jpg" alt="Yalo Island logo" /> 
+        
+        <div class="brand__text">
+          <b>Yalo Island</b>
+          <span>Mama Shahada heARTwork</span>
+        </div>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#portfolio">Portfolio</a>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#booking">Book</a>
+        <button class="pill" id="themeBtn" type="button">🌗 Theme</button>
+        <a class="pill primary" href="#booking">Book Now</a>
+      </nav>
+
+      <button class="pill burger" id="menuBtn" type="button" aria-label="Open menu">☰ Menu</button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="container">
+      <div class="menu" id="menu">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#portfolio">Portfolio</a>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#booking">Book</a>
+        <button class="pill" id="themeBtn2" type="button">🌗 Theme</button>
+        <a class="pill primary" href="#booking">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero__left reveal">
+        <div class="kicker">
+          <span class="dot" aria-hidden="true"></span>
+          <img class="brand__logo" src="assets/logo.jpg" alt="Yalo Island logo" /> 
+          
+           heartist
+        </div>
+
+        <h1>
+          <span class="grad">Yalo Island</span><br/>
+          1 Love 1 
+        </h1>
+
+        <p class="lead">
+           A Shared experience of Professional Skills crafted by a diverse creative creation. 
+        </p>
+
+        <div class="cta">
+          <a class="pill primary" href="#booking">✨ Share Time Book Now</a>
+          <a class="pill" href="#portfolio">🖼️ View portfolio</a>
+          <a class="pill" href="#services">📌 Services</a>
+        </div>
+        <br> 
+          <div class="cta__images">
+    <div class="cta__img">
+      <img src="assets/gallery/makeup/preview1.jpg" alt="Makeup preview">
+    </div>
+    <div class="cta__img">
+      <img src="assets/gallery/photoshoots/preview2.jpg" alt="Photoshoot preview">
+    </div>
+    <div class="cta__img">
+      <img src="assets/gallery/henna/preview3.jpg" alt="Henna preview">
+    </div>
+  </div>
+
+
+
+        
+    </section>
+
+    
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <div class="sectionHead reveal">
+        <div>
+          <h2>Portfolio</h2>
+          <p class="hint">
+            A collection of Skills + Moments Shared 
+          </p>
+        </div>
+      </div>
+
+      <div class="toolbar reveal">
+        <div class="search" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="gallerySearch" placeholder="Search: henna, tattoo, makeup, photoshoot, digital..." />
+        </div>
+
+        <div class="chips" id="galleryFilters" aria-label="Gallery filters">
+          <button class="chip active" data-g="all" type="button">All</button>
+          <button class="chip" data-g="ink" type="button">Henna & Tattoos</button>
+          <button class="chip" data-g="hair" type="button">Hair Style</button>
+          <button class="chip" data-g="makeup" type="button">Makeup</button>
+          <button class="chip" data-g="digital" type="button">Digital Art</button>
+          <button class="chip" data-g="photoshoot" type="button">Film + Photo</button>
+          <button class="chip" data-g="dance" type="button">Dance Movement</button>
+
+        </div>
+      </div>
+
+      <!-- IMPORTANT:
+        Replace the src= paths with YOUR images.
+        Put images in the folders listed above.
+      -->
+      <div class="gallery" id="galleryGrid" aria-label="Portfolio grid">
+
+        <!-- Example: Henna/Tattoo -->
+        <article class="shot reveal" data-gcat="ink" data-title="Henna — floral hand detail">
+          <img class="shot__img" src="assets/gallery/henna/henna.jpg" alt="Henna & Tattoo designs" onerror="this.closest('.shot').classList.add('missing')" />
+          <div class="shot__meta">
+            <b>Henna + Jagua & Tattoo Designs</b>
+            <small>Bridal + Maternity + Events</small>
+          </div>
+          <span class="shot__tag">Henna + Jagua & Tattoo Designs</span>
+        </article>
+
+        <!-- Dance movement -->
+
+        <article class="shot" data-gcat="dance" data-title="Dance movement">
+        <img class="shot__img" src="assets/gallery/Dance/dance1.jpg" alt="Dance" onerror="this.closest('.shot').classList.add('missing')" />
+          <div class="shot__meta">
+          <b>Hip Hop + All Styles</b>
+          <small>Choreographer + Dancer </small>
+          </div>
+          <span class="shot__tag"> Dance Movement </span>
+        </article>
+
+        <!-- Hair -->
+        <article class="shot reveal" data-gcat="hair" data-title="Hair style — sleek finish">
+          <img class="shot__img" src="assets/gallery/hair/hair3.jpg" alt="Hair styling" onerror="this.closest('.shot').classList.add('missing')" />
+          <div class="shot__meta">
+            <b>Women + Man + Unlabelled</b>
+            <small>Cuts + color + styling</small>
+          </div>
+          <span class="shot__tag">Professional Hair Stylist </span>
+        </article>
+
+        <!-- Makeup -->
+        <article class="shot reveal" data-gcat="makeup" data-title="Makeup — soft glam">
+          <img class="shot__img" src="assets/gallery/makeup/makeup1.jpg" alt="Makeup look" onerror="this.closest('.shot').classList.add('missing')" />
+          <div class="shot__meta">
+            <b>Workshops + DIY Tutorials</b>
+            <small>Bridal + Maternity + Events</small>
+          </div>
+          <span class="shot__tag">Makeup + Beauty</span>
+        </article>
+
+        <!-- Digital Art -->
+        <article class="shot reveal" data-gcat="digital" data-title="Digital art — portrait">
+          <img class="shot__img" src="assets/gallery/digital-art/didgi1.jpg" alt="Digital art" onerror="this.closest('.shot').classList.add('missing')" />
+          <div class="shot__meta">
+            <b>Art + Digital Designer</b>
+            <small>Paintings + Murals + Fashion + Interior + Auto </small>
+          </div>+ 
+          <span class="shot__tag">Art + Digital Designer</span>
+        </article>
+
+        <!-- Photoshoots / Modeling -->
+        <article class="shot reveal" data-gcat="photoshoot" data-title="Photoshoot — model vibes">
+          <img class="shot__img" src="assets/gallery/photoshoots/shoot1.jpg" alt="Photoshoot modeling" onerror="this.closest('.shot').classList.add('missing')" />
+          <div class="shot__meta">
+            <b>Creative Director.JPG.MP4</b>
+            <small>Photo + Video + BTS</small>
+          </div>
+          <span class="shot__tag">Creative Director.JPG.MP4</span>
+        </article>
+
+      </div>
+
+      <div class="missingHint reveal" id="missingHint">
+        <b>Heads up:</b> Some images are missing. Add your pictures in <code>assets/gallery/</code> and make sure the file names match the <code>src</code>.
+      </div>
+    </section>
+
+    
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div cla
+        <div>
+          <h2>About</h2>
+          <p class="hint">DONTEdit this text to keep her real story. Keep it simple, and confide in All ah ok.
+            Known As: SHaHAda 
+            Age:less Live More More Life MoDay (Moce)
+            Constalation Connect via: Phone Number/ (Canada Whatsapp) +15879372887
+            eMail (etransfer to send blessings ) shahadafiji@gmail.com 
+            Social Handles @yalo.island yaloisland (insta, snap, tiktok, bigoLIVE, twitch, ettccc...)
+
+          </p>
+        </div>
+      </div>
+
+        <div class="card reveal">
+          <h3>+15879372887 call text whatsapp (CAD)
+            currently Canada wide (Toronto, Alberta) +available international travel
+            shahadafiji@gmail.com
+            best contact insta snap or bigoLIVE DM @yalo.island
+          </h3>
+          <p class="muted"></p>
+          <div class="linkList">
+
+            <!-- PUT HER REAL LINKS HERE -->
+            <a class="pill" href="https://instagram.com/yalo.island" target="_blank" rel="noopener">Instagram</a>
+            <a class="pill" href="https://www.tiktok.com/@yaloisland" target="_blank" rel="noopener">TikTok</a>
+          </div>
+          <p class="muted" style="margin-top:10px;">
+          
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="sectionHead reveal">
+        <div>
+          <h2>Services</h2>
+          <p class="hint">Tap to filter. Prices are placeholders — edit them to her real rates.</p>
+        </div>
+        <div class="chips" id="serviceFilters" role="tablist" aria-label="Service filters">
+          <button class="chip active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="ink" type="button">Henna & Tattoos</button>
+          <button class="chip" data-filter="hair" type="button">Hair Style</button>
+          <button class="chip" data-filter="makeup" type="button">Makeup</button>
+          <button class="chip" data-filter="digital" type="button">Digital Art</button>
+        </div>
+      </div>
+
+      <div class="serviceGrid" id="serviceGrid">
+        <!-- Henna & Tattoos -->
+       <article class="service reveal" data-cat="ink">
+          <div class="serviceTop">
+            <span class="tag">Henna + Jagua & Tattoo Designs</span><span class="price">Invest in yourself</span>
+          </div>
+          <h3>Henna + Jagua & Tattoo Designs</h3>
+          <p>Bridal + Maternity + Events</p>
+          <ul>
+            <li>all natural henna + jagua</li>
+            <li>skin safe body paint</li>
+            <li>tattoo design</li>
+          </ul>
+        </article>
+
+        <!-- Dance movement -->
+        <article class="service reveal" data-cat="hair">
+          <div class="serviceTop">
+            <span class="tag">Dance Movement</span><span class="price">Self Value</span>
+          </div>
+          <h3>Hip Hop + All Styles</h3>
+          <p>Choreographer + Dancer</p>
+          <ul>
+            <li>breath + fitness movement</li>
+            <li>training + foundations </li>
+            <li>in person + virtual sessions</li>
+          </ul>
+        </article>
+
+ <!-- Hairstylist -->
+
+        <article class="service reveal" data-cat="hair">
+          <div class="serviceTop">
+            <span class="tag">Hair styling</span><span class="price">Priceless</span>
+          </div>
+          <h3>Women + Man + Unlabelled</h3>
+          <p>Cuts + color + styling</p>
+          <ul>
+            <li> barber fade curly straight</li>
+            <li>highlights toner creative color </li>
+            <li>braids cornrows bridal updo curls</li>
+          </ul>
+        </article>
+
+        <!-- Makeup -->
+        <article class="service reveal" data-cat="makeup">
+          <div class="serviceTop">
+            <span class="tag">Makeup + Beauty</span><span class="price">Earn more</span>
+          </div>
+          <h3>Workshops + DIY Tutorials</h3>
+          <p>Bridal + Maternity + Events</p>
+          <ul>
+            <li>In person + virtual lessons</li>
+            <li>special occasions  </li>
+            <li>PurssonALLin1 kit (coming soon)(...)</lins>
+          </ul>
+        </article>
+
+
+<!-- Art + Digital Designs -->
+
+        <article class="service reveal" data-cat="makeup">
+          <div class="serviceTop">
+            <span class="tag">Art + Digital Designer</span><span class="price">Self worth</span>
+          </div>
+          <h3>Art + Digital Designers</h3>
+          <p>Paintings + Murals + Fashion + Interior + Auto</p>
+          <ul>
+            <li>multimedium artwork acrylic, pastel, water color + more  </li>
+            <li>Custom creations ie. Reloved fashion, Hand painted items, Reinvisioned photo moments, Logo designs (Whatever your aesthic is I can make it more AESTHETICLY pleasing.) </li>
+            <li>collaboartive creations</li>
+          </ul>
+        </article>
+
+<!-- Creative Director -->
+
+        <article class="service reveal" data-cat="digital">
+          <div class="serviceTop">
+            <span class="tag">Creative Director.JPG.MP4</span><span class="price">know your value</span>
+          </div>
+          <h3>Creative Director.JPG.MP4</h3>
+          <p>Photo + Video + BTS</p>
+          <ul>
+            <li>Artist perspective + visuals <p></p></li>
+            <li>personal real life memories ( vlog style bts)</li>
+            <li>enhanced invisionment traineing (elevationhealing) </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="section">
+      <div class="sectionHead reveal">
+        <div>
+          <h2>Book</h2>
+          <p class="hint">IYKYalo Sea me on IG/TIKTOK/BIGOLIVE.</p>
+        </div>
+      </div>
+
+      <div class="bookGrid">
+        <div class="card reveal">
+          <h3>Booking request</h3>
+          <form id="bookForm" novalidate>
+            <div class="field">
+              <label for="clientName">Your name</label>
+              <input id="clientName" required placeholder="e.g., Yalo" />
+            </div>
+
+            <div class="field">
+              <label for="clientContact">Contact (IG / phone / email)</label>
+              <input id="clientContact" required placeholder="e.g., @handle or 416..." />
+            </div>
+
+            <div class="field">
+              <label for="clientService">Service</label>
+              <select id="clientService" required>
+                <option value="" selected disabled>Select service</option>
+                <option>Henna & Tattoos — Henna</option>
+                <option>Henna & Tattoos — Tattoo</option>
+                <option>Hair Style</option>
+                <option>Makeup</option>
+                <option>Digital Art</option>
+                <option>Photoshoot Glam / Model Prep</option>
+              </select>
+            </div>
+
+            <div class="field two">
+              <div>
+                <label for="clientDate">Preferred date</label>
+                <input id="clientDate" type="date" required />
+              </div>
+              <div>
+                <label for="clientTime">Preferred time</label>
+                <input id="clientTime" type="time" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="clientDetails">Details (style, size, inspo link)</label>
+              <textarea id="clientDetails" required placeholder="Describe what you want + any inspo links..."></textarea>
+            </div>
+
+            <div class="actions">
+              <button class="pill primary" type="submit">✨ Generate message</button>
+              <button class="pill" type="button" id="copyBtn">📋 Copy</button>
+            </div>
+
+            <div class="messageBox" id="messageBox" hidden>
+              <b>Ready-to-send message</b>
+              <pre id="messageText"></pre>
+            </div>
+          </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__in">
+        <div>
+          <b>Yalo Island</b>
+          <div class="muted">shahadafiji@gmail.com</div>
+          <div class="muted">CAD (1) 587 937 2887</div>
+          <small class="muted">© <span id="year"></span></small>
+        </div>
+
+        <div class="footer__links">
+          <!-- PUT HER REAL LINKS HERE -->
+          <a class="pill" href="https://instagram.com/Yalo.island" target="_blank" rel="noopener">Instagram</a>
+          <a class="pill" href="https://www.tiktok.com/@yaloisland" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- MODAL (portfolio preview) -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Preview">
+    <div class="modalCard" role="document">
+      <div class="modalTop">
+        <b id="modalTitle">Preview</b>
+        <button class="pill" id="modalClose" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <img id="modalImg" alt="Preview image" />
+        <p class="muted" id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied ✅</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
